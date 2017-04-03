@@ -31,10 +31,11 @@
             this.readButton = new System.Windows.Forms.Button();
             this.outputLabel = new System.Windows.Forms.Label();
             this.writeButton = new System.Windows.Forms.Button();
-            this.nodeSelect = new System.Windows.Forms.TextBox();
             this.contentSelect = new System.Windows.Forms.TextBox();
             this.editButton = new System.Windows.Forms.Button();
             this.newContent = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // readButton
@@ -50,9 +51,9 @@
             // outputLabel
             // 
             this.outputLabel.BackColor = System.Drawing.Color.White;
-            this.outputLabel.Location = new System.Drawing.Point(35, 122);
+            this.outputLabel.Location = new System.Drawing.Point(35, 155);
             this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(305, 284);
+            this.outputLabel.Size = new System.Drawing.Size(254, 284);
             this.outputLabel.TabIndex = 1;
             // 
             // writeButton
@@ -65,46 +66,58 @@
             this.writeButton.UseVisualStyleBackColor = true;
             this.writeButton.Click += new System.EventHandler(this.writeButton_Click);
             // 
-            // nodeSelect
-            // 
-            this.nodeSelect.Location = new System.Drawing.Point(220, 35);
-            this.nodeSelect.Name = "nodeSelect";
-            this.nodeSelect.Size = new System.Drawing.Size(100, 20);
-            this.nodeSelect.TabIndex = 3;
-            // 
             // contentSelect
             // 
-            this.contentSelect.Location = new System.Drawing.Point(220, 63);
+            this.contentSelect.Location = new System.Drawing.Point(119, 82);
             this.contentSelect.Name = "contentSelect";
             this.contentSelect.Size = new System.Drawing.Size(100, 20);
             this.contentSelect.TabIndex = 4;
             // 
             // editButton
             // 
-            this.editButton.Location = new System.Drawing.Point(338, 36);
+            this.editButton.Location = new System.Drawing.Point(242, 82);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(47, 46);
-            this.editButton.TabIndex = 5;
+            this.editButton.TabIndex = 6;
             this.editButton.Text = "Edit";
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // newContent
             // 
-            this.newContent.Location = new System.Drawing.Point(220, 89);
+            this.newContent.Location = new System.Drawing.Point(119, 108);
             this.newContent.Name = "newContent";
             this.newContent.Size = new System.Drawing.Size(100, 20);
-            this.newContent.TabIndex = 6;
+            this.newContent.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(40, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Old Name:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(40, 111);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "New Name:";
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 448);
+            this.ClientSize = new System.Drawing.Size(321, 448);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.newContent);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.contentSelect);
-            this.Controls.Add(this.nodeSelect);
             this.Controls.Add(this.writeButton);
             this.Controls.Add(this.outputLabel);
             this.Controls.Add(this.readButton);
@@ -120,10 +133,11 @@
         private System.Windows.Forms.Button readButton;
         private System.Windows.Forms.Label outputLabel;
         private System.Windows.Forms.Button writeButton;
-        private System.Windows.Forms.TextBox nodeSelect;
         private System.Windows.Forms.TextBox contentSelect;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.TextBox newContent;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

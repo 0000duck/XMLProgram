@@ -53,21 +53,21 @@ namespace XMLProgram
             * 
             * The following code will create a new XML file and 
             * then create element headers and content.  Finally it 
-            * saves the info to the XML file.  If a file already exists
+            * save the info to the XML file.  If a file already exists
             * with the same name it will be overwritten with the 
             * information below.
             */
 
-            XmlTextWriter writer = new XmlTextWriter("file3.xml", null);
+            XmlTextWriter writer = new XmlTextWriter("outputExample.xml", null);
 
-            //Write the "Class" element
+            //Write the "class" element
             writer.WriteStartElement("Class");
 
             //Start "student" element
             writer.WriteStartElement("student");
 
             //Write sub-elements
-            writer.WriteElementString("name", "New Guy");
+            writer.WriteElementString("name", "Chris");
             writer.WriteElementString("address", "1313 Mockingbird Lane");
             writer.WriteElementString("phone", "555-1313");
             writer.WriteElementString("sex", "Female");
@@ -75,7 +75,7 @@ namespace XMLProgram
             // end the "student" element
             writer.WriteEndElement();
 
-            // end the "Class" element
+            // end the "class" element
             writer.WriteEndElement();
 
             //Write the XML to file and close the writer
@@ -103,15 +103,15 @@ namespace XMLProgram
             //The name sub element is searched and if the text matches 'Chris'
             //it is changed to 'Howard'
             foreach (XmlNode node1 in node.ChildNodes)
-            {
                 foreach (XmlNode node2 in node1.ChildNodes)
-                {
-                    if (node2.InnerText == contentSelect.Text)
+                    //if (node2.Name == "name" && node2.InnerText == "Chris")
+                    //{
+                    //    node2.InnerText = "Howard";
+                    //}
+                    if (node2.Name == nodeSelect.Text && node2.InnerText == contentSelect.Text)
                     {
                         node2.InnerText = newContent.Text;
                     }
-                }
-            }
             //save and close the document
             doc.Save("information.xml");
 

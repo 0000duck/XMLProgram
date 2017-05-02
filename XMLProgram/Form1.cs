@@ -33,7 +33,7 @@ namespace XMLProgram
             outputLabel.Text = "";
 
             // Continue to read each element and text until the file is done
-            while (reader.Read())  
+            while (reader.Read())
             {
                 // If the currently read item is text then print it to screen,
                 // otherwise the loop repeats getting the next piece of information
@@ -42,6 +42,7 @@ namespace XMLProgram
                     outputLabel.Text += reader.Value + "\n";
                 }
             }
+
             // When done reading the file close it
             reader.Close();
 
@@ -58,7 +59,7 @@ namespace XMLProgram
             * information below.
             */
 
-            XmlTextWriter writer = new XmlTextWriter("file3.xml", null);
+            XmlTextWriter writer = new XmlTextWriter("studentInfo.xml", null);
 
             //Write the "Class" element
             writer.WriteStartElement("Class");
@@ -67,7 +68,7 @@ namespace XMLProgram
             writer.WriteStartElement("student");
 
             //Write sub-elements
-            writer.WriteElementString("name", "New Guy");
+            writer.WriteElementString("name", "Sheila");
             writer.WriteElementString("address", "1313 Mockingbird Lane");
             writer.WriteElementString("phone", "555-1313");
             writer.WriteElementString("sex", "Female");
@@ -94,28 +95,40 @@ namespace XMLProgram
             XmlDocument doc = new XmlDocument();
             doc.Load("information.xml");
 
-            //create a node variable to represent an element
-            XmlNode node;
+            XmlNodeList nameList = doc.GetElementsByTagName("name");
 
-            node = doc.DocumentElement;
+            foreach (XmlNode n in nameList)
+            {
+                if (n.InnerText == contentSelect.Text)
+                {
+                    n.InnerText = newContent.Text;
+                }
+            }
+
+            doc.Save("information.xml");
+
+            readButton_Click(sender, e);
+
+            #region Old way with nested loops
+            //create a node variable to represent an element
+            //XmlNode node;
+            //node = doc.DocumentElement;
 
             //node1 is a child of node and node2 is a child of node1
             //The name sub element is searched and if the text matches 'Chris'
             //it is changed to 'Howard'
-            foreach (XmlNode node1 in node.ChildNodes)
-            {
-                foreach (XmlNode node2 in node1.ChildNodes)
-                {
-                    if (node2.InnerText == contentSelect.Text)
-                    {
-                        node2.InnerText = newContent.Text;
-                    }
-                }
-            }
+            //foreach (XmlNode node1 in node.ChildNodes)
+            //{
+            //    foreach (XmlNode node2 in node1.ChildNodes)
+            //    {
+            //        if (node2.InnerText == contentSelect.Text)
+            //        {
+            //            node2.InnerText = newContent.Text;
+            //        }
+            //    }
+            //}
             //save and close the document
-            doc.Save("information.xml");
-
-            readButton_Click(sender, e);
+            #endregion
         }
     }
 }

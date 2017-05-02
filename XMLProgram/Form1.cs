@@ -95,8 +95,11 @@ namespace XMLProgram
             XmlDocument doc = new XmlDocument();
             doc.Load("information.xml");
 
+            //create a list of all nodes called "name"
             XmlNodeList nameList = doc.GetElementsByTagName("name");
 
+            //search through each node in list until the inputted name
+            //is found and then replace with the new name
             foreach (XmlNode n in nameList)
             {
                 if (n.InnerText == contentSelect.Text)

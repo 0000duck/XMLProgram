@@ -27,7 +27,7 @@ namespace XMLProgram
             */
 
             // Open the file to be read
-            XmlTextReader reader = new XmlTextReader("information.xml");
+            XmlTextReader reader = new XmlTextReader("Resources/studentInfo.xml");
 
             // Clear output label
             outputLabel.Text = "";
@@ -48,7 +48,7 @@ namespace XMLProgram
 
         }
 
-        private void writeButton_Click(object sender, EventArgs e)
+        private void resetButton_Click(object sender, EventArgs e)
         {
             /* WRITE TO XML FILE
             * 
@@ -59,7 +59,7 @@ namespace XMLProgram
             * information below.
             */
 
-            XmlTextWriter writer = new XmlTextWriter("studentInfo.xml", null);
+            XmlTextWriter writer = new XmlTextWriter("Resources/studentInfo.xml", null);
 
             //Write the "Class" element
             writer.WriteStartElement("Class");
@@ -108,30 +108,9 @@ namespace XMLProgram
                 }
             }
 
-            doc.Save("information.xml");
+            doc.Save("Resources/studentInfo.xml");
 
             readButton_Click(sender, e);
-
-            #region Old way with nested loops
-            //create a node variable to represent an element
-            //XmlNode node;
-            //node = doc.DocumentElement;
-
-            //node1 is a child of node and node2 is a child of node1
-            //The name sub element is searched and if the text matches 'Chris'
-            //it is changed to 'Howard'
-            //foreach (XmlNode node1 in node.ChildNodes)
-            //{
-            //    foreach (XmlNode node2 in node1.ChildNodes)
-            //    {
-            //        if (node2.InnerText == contentSelect.Text)
-            //        {
-            //            node2.InnerText = newContent.Text;
-            //        }
-            //    }
-            //}
-            //save and close the document
-            #endregion
         }
     }
 }

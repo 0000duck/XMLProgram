@@ -93,7 +93,7 @@ namespace XMLProgram
 
             //open XML document
             XmlDocument doc = new XmlDocument();
-            doc.Load("information.xml");
+            doc.Load("Resources/studentInfo.xml");
 
             //create a list of all nodes called "name"
             XmlNodeList nameList = doc.GetElementsByTagName("name");

@@ -102,9 +102,9 @@ namespace XMLProgram
             //is found and then replace with the new name
             foreach (XmlNode n in nameList)
             {
-                if (n.InnerText == contentSelect.Text)
+                if (n.InnerText == oldNameInput.Text)
                 {
-                    n.InnerText = newContent.Text;
+                    n.InnerText = newNameInput.Text;
                 }
             }
 

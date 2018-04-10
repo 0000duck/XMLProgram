@@ -31,9 +31,9 @@
             this.readButton = new System.Windows.Forms.Button();
             this.outputLabel = new System.Windows.Forms.Label();
             this.resetButton = new System.Windows.Forms.Button();
-            this.contentSelect = new System.Windows.Forms.TextBox();
+            this.oldNameInput = new System.Windows.Forms.TextBox();
             this.editButton = new System.Windows.Forms.Button();
-            this.newContent = new System.Windows.Forms.TextBox();
+            this.newNameInput = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -69,13 +69,13 @@
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
-            // contentSelect
+            // oldNameInput
             // 
-            this.contentSelect.Location = new System.Drawing.Point(158, 125);
-            this.contentSelect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.contentSelect.Name = "contentSelect";
-            this.contentSelect.Size = new System.Drawing.Size(148, 26);
-            this.contentSelect.TabIndex = 4;
+            this.oldNameInput.Location = new System.Drawing.Point(158, 125);
+            this.oldNameInput.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.oldNameInput.Name = "oldNameInput";
+            this.oldNameInput.Size = new System.Drawing.Size(148, 26);
+            this.oldNameInput.TabIndex = 4;
             // 
             // editButton
             // 
@@ -88,13 +88,13 @@
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
-            // newContent
+            // newNameInput
             // 
-            this.newContent.Location = new System.Drawing.Point(158, 165);
-            this.newContent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.newContent.Name = "newContent";
-            this.newContent.Size = new System.Drawing.Size(148, 26);
-            this.newContent.TabIndex = 5;
+            this.newNameInput.Location = new System.Drawing.Point(158, 165);
+            this.newNameInput.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.newNameInput.Name = "newNameInput";
+            this.newNameInput.Size = new System.Drawing.Size(148, 26);
+            this.newNameInput.TabIndex = 5;
             // 
             // label1
             // 
@@ -123,9 +123,9 @@
             this.ClientSize = new System.Drawing.Size(482, 689);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.newContent);
+            this.Controls.Add(this.newNameInput);
             this.Controls.Add(this.editButton);
-            this.Controls.Add(this.contentSelect);
+            this.Controls.Add(this.oldNameInput);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.outputLabel);
             this.Controls.Add(this.readButton);
@@ -142,9 +142,9 @@
         private System.Windows.Forms.Button readButton;
         private System.Windows.Forms.Label outputLabel;
         private System.Windows.Forms.Button resetButton;
-        private System.Windows.Forms.TextBox contentSelect;
+        private System.Windows.Forms.TextBox oldNameInput;
         private System.Windows.Forms.Button editButton;
-        private System.Windows.Forms.TextBox newContent;
+        private System.Windows.Forms.TextBox newNameInput;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }
